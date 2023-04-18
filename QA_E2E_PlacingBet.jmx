@@ -1,0 +1,2329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="AvantageCredentials.csv" enabled="false">
+        <stringProp name="filename">AvantageCredentials.csv</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="variableNames">p_Username</stringProp>
+        <boolProp name="ignoreFirstLine">true</boolProp>
+        <stringProp name="delimiter">,</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="sec-ch-ua" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua</stringProp>
+            <stringProp name="Header.value">&quot;Google Chrome&quot;;v=&quot;105&quot;, &quot;Not)A;Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;105&quot;</stringProp>
+          </elementProp>
+          <elementProp name="sec-ch-ua-mobile" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+            <stringProp name="Header.value">?0</stringProp>
+          </elementProp>
+          <elementProp name="sec-ch-ua-platform" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+            <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+          </elementProp>
+          <elementProp name="User-Agent" elementType="Header">
+            <stringProp name="Header.name">User-Agent</stringProp>
+            <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="BASE_URL_1" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_1</stringProp>
+            <stringProp name="Argument.value">main-game-portal-client-tf-client-b2c.qa.avantagegames.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL_2" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_2</stringProp>
+            <stringProp name="Argument.value">main-ps-strapi-cms-tf-internal-alb.stage.avantagegames.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL_3" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_3</stringProp>
+            <stringProp name="Argument.value">cookie-cdn.cookiepro.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL_4" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_4</stringProp>
+            <stringProp name="Argument.value">cognito-idp.eu-west-2.amazonaws.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL_5" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_5</stringProp>
+            <stringProp name="Argument.value">mtd6i5715d.execute-api.eu-west-2.amazonaws.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL_6" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_6</stringProp>
+            <stringProp name="Argument.value">main-comp-eng-public-rest.qa.avantagegames.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL_7" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_7</stringProp>
+            <stringProp name="Argument.value">d2uhdy6h45mgd1.cloudfront.net</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL_8" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_8</stringProp>
+            <stringProp name="Argument.value">tbxdox4e4je7xp3g25qsakjkyi.appsync-api.eu-west-2.amazonaws.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">igipsita6remflo6k3yxqtuwhi.appsync-api.eu-west-2.amazonaws.com</stringProp>
+          </elementProp>
+          <elementProp name="BaseURL" elementType="Argument">
+            <stringProp name="Argument.name">BaseURL</stringProp>
+            <stringProp name="Argument.value">mbk663siag.execute-api.eu-west-2.amazonaws.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="EVENT_2022_12_09_11_13_FRI_1670579311" elementType="Argument">
+            <stringProp name="Argument.name">EVENT_2022_12_09_11_13_FRI_1670579311</stringProp>
+            <stringProp name="Argument.value">EVENT_2023_01_05_06_38_THU_1672898925</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="accessToken1" elementType="Argument">
+            <stringProp name="Argument.name">accessToken1</stringProp>
+            <stringProp name="Argument.value">eyJraWQiOiJ4NjVJeHpHUzcxczhGYVwveUVMVWRZU2c2Mm1GRHUrZ290cksxaFwvXC9lRUdJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJjZTBhZGI3NS0wYjQzLTQzM2EtOGJiOC04OTJiNzcwMjY1NGQiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMi5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTJfYTNnRWU3eWZKIiwiY29nbml0bzp1c2VybmFtZSI6ImNlMGFkYjc1LTBiNDMtNDMzYS04YmI4LTg5MmI3NzAyNjU0ZCIsIm9yaWdpbl9qdGkiOiIxZmZiMTEyMS0wYmU2LTQyOWMtODE5My0zNzYyMzRlNTZlZDIiLCJhdWQiOiIzY2o4b2RrcmtjdTM4a3Vjc3BlN3AybmMzMSIsImV2ZW50X2lkIjoiYzFmOGQ3OTEtMWE4MC00NzdmLWE1ZTItMmMzM2JmZDdjZDk2IiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2NzMzNDY0NzAsImV4cCI6MTY3MzM1Mjk4NiwiaWF0IjoxNjczMzUyMDg2LCJqdGkiOiJjZjk2MWJiNy03YmQwLTRhOTYtYjRhNi0yNjA2OTFmNzBmNjgiLCJlbWFpbCI6InZpbmF5LnJrQGlnc2luZGlhLm5ldCJ9.TXr08xSaCdsTFoVcrz0r1TnnvtKvCC3UvoxCUKznsjKQ2p2H2YOb3C1e9PzEP_v5D9jBpADmKdSMMtwTFi1F8SIKH8W3SKZawgo5QsysL_7QmtELJfi5j6H7eAzjaXsAhsKw6rpVFoWBjEXlWj_-49_GHZCLBsdxU1xIH6uPk-ySnfhuesEV45O5y-bDjn2rNuMFqtnStinEdA4HxnrvYZ_APNcTj1rHRStPn85_GvrfDvjsW42jOtWgJ0mjenMCnbEy7z7TxPJhuVCqkAMG47WJJT3Azb_GW7FppvBI8P_WLDxHHdBEj-GC-gMJWvJAhOxCte4HUDBIEJ4rVQBgIg</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="C_eventID1" elementType="Argument">
+            <stringProp name="Argument.name">C_eventID1</stringProp>
+            <stringProp name="Argument.value">EVENT_2023_01_05_05_45_THU_1672896329</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">EVENT_2023_01_05_06_47_THU_1672899456</stringProp>
+          </elementProp>
+          <elementProp name="TT" elementType="Argument">
+            <stringProp name="Argument.name">TT</stringProp>
+            <stringProp name="Argument.value">6000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="p_Username1" elementType="Argument">
+            <stringProp name="Argument.name">p_Username1</stringProp>
+            <stringProp name="Argument.value">QAPT0014</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="P_compettionID" elementType="Argument">
+            <stringProp name="Argument.name">P_compettionID</stringProp>
+            <stringProp name="Argument.value">642a60f19995046c86784f59</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">    </stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain"></stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.protocol"></stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <boolProp name="HTTPSampler.image_parser">true</boolProp>
+        <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
+        <collectionProp name="DNSCacheManager.servers"/>
+        <boolProp name="DNSCacheManager.clearEachIteration">true</boolProp>
+        <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
+      </DNSCacheManager>
+      <hashTree/>
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+        <collectionProp name="AuthManager.auth_list"/>
+        <boolProp name="AuthManager.controlledByThreadGroup">false</boolProp>
+      </AuthManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+        <boolProp name="CacheManager.controlledByThread">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="NewUser" enabled="true">
+        <stringProp name="filename">D:/IGS/Avantage1.0.0/QA/TestData/QA_1_100.csv</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="variableNames"></stringProp>
+        <boolProp name="ignoreFirstLine">true</boolProp>
+        <stringProp name="delimiter">,</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Play" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">100</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">50</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">3600</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Login" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="AccessToken" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+&#xd;
+        &quot;password&quot;: &quot;Testigs@123&quot;,&#xd;
+&#xd;
+        &quot;clientId&quot;: &quot;3cj8odkrkcu38kucspe7p2nc31&quot;,&#xd;
+&#xd;
+        &quot;poolId&quot;: &quot;eu-west-2_a3gEe7yfJ&quot;,&#xd;
+&#xd;
+        &quot;userName&quot;: &quot;${userName}@igs.com&quot;&#xd;
+&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">4000</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/v1.0/user</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2022-05-11T23:25:45.4454834</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+              <stringProp name="TestPlan.comments">Created from cURL on 2022-05-11T23:25:45.4464672</stringProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">accessToken</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..IdToken</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="false">
+              <stringProp name="BeanShellAssertion.query">${__setProperty(accessToken, ${accessToken})};</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="false">
+            <boolProp name="LoopController.continue_forever">true</boolProp>
+            <intProp name="LoopController.loops">-1</intProp>
+          </LoopController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="AccessToken" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+&#xd;
+        &quot;password&quot;: &quot;Testigs@123&quot;,&#xd;
+&#xd;
+        &quot;clientId&quot;: &quot;3cj8odkrkcu38kucspe7p2nc31&quot;,&#xd;
+&#xd;
+        &quot;poolId&quot;: &quot;eu-west-2_a3gEe7yfJ&quot;,&#xd;
+&#xd;
+        &quot;userName&quot;: &quot;vinay.rk@igsindia.net&quot;&#xd;
+&#xd;
+}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">10.3.36.61</stringProp>
+              <stringProp name="HTTPSampler.port">4000</stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/v1.0/user</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="TestPlan.comments">Created from cURL on 2022-05-11T23:25:45.4454834</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                </collectionProp>
+                <stringProp name="TestPlan.comments">Created from cURL on 2022-05-11T23:25:45.4464672</stringProp>
+              </HeaderManager>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">accessToken</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$..IdToken</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+                <stringProp name="BeanShellAssertion.query">${__setProperty(accessToken, ${accessToken})};</stringProp>
+                <stringProp name="BeanShellAssertion.filename"></stringProp>
+                <stringProp name="BeanShellAssertion.parameters"></stringProp>
+                <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+              </BeanShellAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="false">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration">600000</stringProp>
+          </TestAction>
+          <hashTree/>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="MyContests" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qc-comp-eng-public-rest.dev.worldsbc.net/external/competitions/pending?game=Avantage%20Baccarat&amp;limit=0  ${__groovy(def now = new Date(); use(groovy.time.TimeCategory) { def nowPlusOneYear = now + 392.minute; return  nowPlusOneYear.format(&quot;yyyy-MM-dd&apos;T&apos;HH:mm:ss.SSS&apos;Z&apos;&quot;\,TimeZone.getTimeZone(&apos;UTC&apos;)) },)} " enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="game" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">game</stringProp>
+                  <stringProp name="Argument.value">Avantage Baccarat</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="limit" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">limit</stringProp>
+                  <stringProp name="Argument.value">0</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_6}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">external/competitions/pending</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qc-comp-eng-public-rest.dev.worldsbc.net/external/competitions/resolved?game=Avantage%20Baccarat&amp;limit=0" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="game" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">game</stringProp>
+                  <stringProp name="Argument.value">Avantage Baccarat</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="limit" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">limit</stringProp>
+                  <stringProp name="Argument.value">0</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_6}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">external/competitions/resolved</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qc-comp-eng-public-rest.dev.worldsbc.net/external/competitions/pending?game=Avantage%20Baccarat&amp;sortBy[startingTime]=ascending&amp;filters[competitionSearchType]=RMG&amp;limit=20&amp;page=1" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="filters[competitionSearchType]" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">filters[competitionSearchType]</stringProp>
+                  <stringProp name="Argument.value">RMG</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="game" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">game</stringProp>
+                  <stringProp name="Argument.value">Avantage Baccarat</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="limit" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">limit</stringProp>
+                  <stringProp name="Argument.value">20</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="sortBy[startingTime]" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">sortBy[startingTime]</stringProp>
+                  <stringProp name="Argument.value">ascending</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="page" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">page</stringProp>
+                  <stringProp name="Argument.value">1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_6}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">external/competitions/pending</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="PlayforFun" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qc-comp-eng-public-rest.dev.worldsbc.net/external/competitions/pending?game=Avantage%20Baccarat&amp;sortBy[startingTime]=ascending&amp;filters[competitionSearchType]=SOCIAL&amp;limit=20&amp;page=1" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="filters[competitionSearchType]" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">filters[competitionSearchType]</stringProp>
+                  <stringProp name="Argument.value">SOCIAL</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="game" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">game</stringProp>
+                  <stringProp name="Argument.value">Avantage Baccarat</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="limit" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">limit</stringProp>
+                  <stringProp name="Argument.value">20</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="sortBy[startingTime]" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">sortBy[startingTime]</stringProp>
+                  <stringProp name="Argument.value">ascending</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="page" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">page</stringProp>
+                  <stringProp name="Argument.value">1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_6}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">external/competitions/pending</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+              <stringProp name="ConstantTimer.delay">60000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qc-comp-eng-public-rest.dev.worldsbc.net/external/competitions/pending?game=Avantage%20Baccarat&amp;sortBy[startingTime]=ascending&amp;filters[competitionSearchType]=SOCIAL&amp;limit=20&amp;page=1" enabled="false">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="filters[competitionSearchType]" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">filters[competitionSearchType]</stringProp>
+                  <stringProp name="Argument.value">RMG</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="game" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">game</stringProp>
+                  <stringProp name="Argument.value">Avantage Baccarat</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="limit" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">limit</stringProp>
+                  <stringProp name="Argument.value">20</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="sortBy[startingTime]" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">sortBy[startingTime]</stringProp>
+                  <stringProp name="Argument.value">ascending</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="page" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">page</stringProp>
+                  <stringProp name="Argument.value">1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_6}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">external/competitions/pending</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+              <stringProp name="ConstantTimer.delay">60000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="SelectEvent" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qc-ps-strapi-cms-tf-internal-alb.dev.worldsbc.net:3000/pages/av-baccarat" enabled="false">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port">3000</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">pages/av-baccarat</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qc-comp-eng-public-rest.dev.worldsbc.net/external/competitions/633eae335ffcbcafcad34249" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_6}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">external/competitions/${P_compettionID}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">${__timeShift(YYYY-MM-dd&apos;T&apos;hh:mm:ss.SSS&apos;Z&apos;,,-PT5H30M32S,,)}
+
+
+${__timeShift(hh:mm:ss,,-PT5H30M2S,,)}</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_StartTimeHour" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_StartTimeHour</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;startTime&quot;:&quot;[0-9]+?-[0-9]+?-[0-9]+?T([0-9]+?):[0-9]+?:[0-9]+?.[0-9]+?Z&quot;,</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">c_StartTimeHour_NotFound</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_StartTimeMinutes" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_StartTimeMinutes</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;startTime&quot;:&quot;[0-9]+?-[0-9]+?-[0-9]+?T[0-9]+?:([0-9]+?):[0-9]+?.[0-9]+?Z&quot;,</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">c_StartTimeMinutes_NotFound</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_StartTimeSeconds" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_StartTimeSeconds</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;startTime&quot;:&quot;[0-9]+?-[0-9]+?-[0-9]+?T[0-9]+?:[0-9]+?:([0-9]+?).[0-9]+?Z&quot;,</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">c_StartTimeSeconds_NotFound</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_StartTime" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_StartTime</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;startTime&quot;:&quot;[0-9]+?-[0-9]+?-[0-9]+?T([0-9:]+?).[0-9]+?Z&quot;,</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">c_StartTime_NotFound</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">import java.text.SimpleDateFormat;
+import java.time.*;
+import java.time.format.*;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+String StartTime = vars.get(&quot;c_StartTime&quot;);
+
+	SimpleDateFormat sdf = new SimpleDateFormat(&quot;hh:mm:ss&quot;);
+	//long unixtime = sdf.parse(&quot;2017-03-21&quot;).getTime();
+	long unixtime = sdf.parse(&quot;${__timeShift(hh:mm:ss,,-PT5H30M2S,,)}&quot;).getTime();
+	vars.put(&quot;unixtime&quot;, String.valueOf(unixtime));
+//	log.info(String.valueOf(unixtime));
+	long unixtime01 = sdf.parse(&quot;${c_StartTime}&quot;).getTime();
+	vars.put(&quot;unixtime01&quot;, String.valueOf(unixtime01));
+//	log.info(String.valueOf(unixtime01));
+	long Sub = unixtime01 - unixtime +30000 ;
+	vars.put(&quot;Sub&quot;, String.valueOf(Sub));
+//	log.info(String.valueOf(Sub));
+</stringProp>
+              <stringProp name="scriptLanguage">bsh</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qc-comp-eng-public-rest.dev.worldsbc.net/external/participants/id/from-competition/633eae335ffcbcafcad34249" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_6}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">external/participants/id/from-competition/${P_compettionID}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="C_participantID" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">C_participantID</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..participantId</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qc-comp-eng-public-rest.dev.worldsbc.net/external/competitions/633eae335ffcbcafcad34249" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_6}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">external/competitions/${P_compettionID}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Play" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qc-comp-eng-public-rest.dev.worldsbc.net/external/competitions/633eae335ffcbcafcad34249" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_6}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">external/competitions/${P_compettionID}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">${Sub}</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qc-comp-eng-public-rest.dev.worldsbc.net/external/participants/id/from-competition/633eae335ffcbcafcad34249" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_6}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">external/participants/id/from-competition/${P_compettionID}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="C_participantID" enabled="false">
+              <stringProp name="JSONPostProcessor.referenceNames">C_participantID</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.._id</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qc-comp-eng-public-rest.dev.worldsbc.net/shared/leaderboards/competition/633eae335ffcbcafcad34249" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_6}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">shared/leaderboards/competition/${P_compettionID}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="C_participantID" enabled="false">
+              <stringProp name="JSONPostProcessor.referenceNames">C_participantID1</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.._id</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="false">
+              <stringProp name="BeanShellAssertion.query">${__setProperty(C_participantID1,${C_participantID})}</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="false">
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="script">praticipantID = vars.get(&quot;C_participantID&quot;);
+username = vars.get(&quot;p_username&quot;);
+f = new FileOutputStream(&quot;code.csv&quot;, true);
+p = new PrintStream(f);
+this.interpreter.setOut(p);
+print(username+&quot;,&quot;+praticipantID);
+f.close();</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qc-comp-eng-public-rest.dev.worldsbc.net/shared/competitions/633eae335ffcbcafcad34249" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_6}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">shared/competitions/${P_compettionID}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="C_eventID" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">C_eventID</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..ls3ParentEventId</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="false">
+              <stringProp name="BeanShellAssertion.query">${__setProperty(EventID,${C_eventID})}
+
+</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://ag3jqjzrevdxpkukx6fb5ap7gy.appsync-api.eu-west-2.amazonaws.com/graphql" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;query&quot;:&quot;mutation CheckValidationToken($input: ValidateTokenInput!) {\n  checkValidationToken(input: $input) {\n    message\n    statusCode\n  }\n}\n&quot;,&quot;variables&quot;:{&quot;input&quot;:{&quot;participantId&quot;:&quot;${C_participantID}&quot;}}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_8}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="x-amz-user-agent" elementType="Header">
+                  <stringProp name="Header.name">x-amz-user-agent</stringProp>
+                  <stringProp name="Header.value">aws-amplify/4.2.8 js</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://ag3jqjzrevdxpkukx6fb5ap7gy.appsync-api.eu-west-2.amazonaws.com/graphql" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;query&quot;:&quot;query GetUserByID($ID: String!) {\n  getUserByID(ID: $ID) {\n    items {\n      ID\n      name\n      balance\n      balanceCurrency\n      eventId\n      startTime\n      endTime\n      missingPlaysToQualify\n      status\n      showSqueezePopup\n      subEventId\n      handNumber\n      isOneHandContest\n      contestId\n    }\n    nextToken\n    ID\n  }\n}\n&quot;,&quot;variables&quot;:{&quot;ID&quot;:&quot;${C_participantID}&quot;}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_8}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="x-amz-user-agent" elementType="Header">
+                  <stringProp name="Header.name">x-amz-user-agent</stringProp>
+                  <stringProp name="Header.value">aws-amplify/4.2.8 js</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://ag3jqjzrevdxpkukx6fb5ap7gy.appsync-api.eu-west-2.amazonaws.com/graphql" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;query&quot;:&quot;query GetGameState($gameSessionId: String!) {\n  getGameState(gameSessionId: $gameSessionId) {\n    items {\n      ID\n      bankerPositionOdds\n      bettingRoundData\n      gameSessionId\n      hand\n      isBurnCardsProcessStarted\n      players\n      state\n      eventType\n      timestamp\n      dealingSequence\n      exposedPosition\n    }\n    serverTime\n    nextToken\n  }\n}\n&quot;,&quot;variables&quot;:{&quot;gameSessionId&quot;:&quot;${C_eventID}&quot;}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_8}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="x-amz-user-agent" elementType="Header">
+                  <stringProp name="Header.name">x-amz-user-agent</stringProp>
+                  <stringProp name="Header.value">aws-amplify/4.2.8 js</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://ag3jqjzrevdxpkukx6fb5ap7gy.appsync-api.eu-west-2.amazonaws.com/graphql" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;query&quot;:&quot;query GetPlacedPlays($gameSessionId: String!, $status: String, $participantId: String!) {\n  getPlacedPlays(gameSessionId: $gameSessionId, status: $status, participantId: $participantId) {\n    gameSessionId\n    items {\n      confirmationTimestamp\n      currentHand\n      fromPlayer\n      gameSessionId\n      hand\n      playType\n      odd\n      playerId\n      points\n      round\n      state\n      toPlayer\n      toWin\n      uiid\n      use4qualification\n      gsid\n    }\n    message\n    playerId\n    statusCode\n  }\n}\n&quot;,&quot;variables&quot;:{&quot;participantId&quot;:&quot;${C_participantID}&quot;,&quot;gameSessionId&quot;:&quot;${C_eventID}&quot;}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_8}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="x-amz-user-agent" elementType="Header">
+                  <stringProp name="Header.name">x-amz-user-agent</stringProp>
+                  <stringProp name="Header.value">aws-amplify/4.2.8 js</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://ag3jqjzrevdxpkukx6fb5ap7gy.appsync-api.eu-west-2.amazonaws.com/graphql" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;query&quot;:&quot;query GetTableActionsStat($gameSessionId: String!) {\n  getTableActionsStat(gameSessionId: $gameSessionId) {\n    gameSessionId\n    players\n    uiid\n  }\n}\n&quot;,&quot;variables&quot;:{&quot;participantId&quot;:&quot;${C_participantID}&quot;,&quot;gameSessionId&quot;:&quot;${C_eventID}&quot;}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_8}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="x-amz-user-agent" elementType="Header">
+                  <stringProp name="Header.name">x-amz-user-agent</stringProp>
+                  <stringProp name="Header.value">aws-amplify/4.2.8 js</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://ag3jqjzrevdxpkukx6fb5ap7gy.appsync-api.eu-west-2.amazonaws.com/graphql" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;query&quot;:&quot;query GetSubEventFinishState($eventId: String!) {\n  getSubEventFinishState(eventId: $eventId) {\n    finished\n    eventId\n  }\n}\n&quot;,&quot;variables&quot;:{&quot;eventId&quot;:&quot;${C_eventID}_hour_3&quot;}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_8}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="x-amz-user-agent" elementType="Header">
+                  <stringProp name="Header.name">x-amz-user-agent</stringProp>
+                  <stringProp name="Header.value">aws-amplify/4.2.8 js</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://ag3jqjzrevdxpkukx6fb5ap7gy.appsync-api.eu-west-2.amazonaws.com/graphql" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;query&quot;:&quot;query GetCompetitionEventState($eventId: String!) {\n  getCompetitionEventState(eventId: $eventId) {\n    items {\n      ID\n      eventId\n      uiid\n      state\n      startTime\n      studioTimeZone\n      videoStreams\n    }\n    message\n    eventId\n    statusCode\n  }\n}\n&quot;,&quot;variables&quot;:{&quot;eventId&quot;:&quot;${C_eventID}&quot;}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_8}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="x-amz-user-agent" elementType="Header">
+                  <stringProp name="Header.name">x-amz-user-agent</stringProp>
+                  <stringProp name="Header.value">aws-amplify/4.2.8 js</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://ag3jqjzrevdxpkukx6fb5ap7gy.appsync-api.eu-west-2.amazonaws.com/graphql" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;query&quot;:&quot;query GetAllActionsStat($contestId: String!) {\n  getAllActionsStat(contestId: $contestId) {\n    gameSessionId\n    players\n    uiid\n  }\n}\n&quot;,&quot;variables&quot;:{&quot;participantId&quot;:&quot;${C_participantID}&quot;,&quot;contestId&quot;:&quot;${P_compettionID}&quot;}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_8}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="x-amz-user-agent" elementType="Header">
+                  <stringProp name="Header.name">x-amz-user-agent</stringProp>
+                  <stringProp name="Header.value">aws-amplify/4.2.8 js</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qc-comp-eng-public-rest.dev.worldsbc.net/shared/leaderboards/participant/633ec83d5ffcbc126dd3d642" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_6}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">shared/leaderboards/participant/${C_participantID}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="C_participantID1" enabled="false">
+              <stringProp name="JSONPostProcessor.referenceNames">C_participantID1</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..participantId</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="false">
+              <stringProp name="BeanShellAssertion.query">${__setProperty(C_participantID1,${C_participantID1})}</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Place Bet - Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </LoopController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get Game State API" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;query&quot;:&quot;query GetGameState($gameSessionId: String!) {\n  getGameState(gameSessionId: $gameSessionId) {\n    items {\n      ID\n      bankerPositionOdds\n      bettingRoundData\n      gameSessionId\n      hand\n      isBurnCardsProcessStarted\n      players\n      state\n      eventType\n      timestamp\n      dealingSequence\n      exposedPosition\n    }\n    serverTime\n    nextToken\n  }\n}\n&quot;,&quot;variables&quot;:{&quot;gameSessionId&quot;:&quot;${C_eventID}&quot;}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_8}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="x-amz-user-agent" elementType="Header">
+                  <stringProp name="Header.name">x-amz-user-agent</stringProp>
+                  <stringProp name="Header.value">aws-amplify/4.2.8 js</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_BankerPlayer" enabled="true">
+              <stringProp name="TestPlan.comments">\{\\&quot;seat\\&quot;:([0-9]+?),\\&quot;isBanker\\&quot;:true,\\&quot;cards\\&quot;:\[(.*?)\],\\&quot;playerName\\&quot;:\\&quot;([A-Za-z0-9 ]+?)\\&quot;,\\&quot;odds\\&quot;:\[\{\\&quot;oddId\\&quot;:\\&quot;[0-9a-zA-Z-]+?\\&quot;,\\&quot;title\\&quot;:\\&quot;([0-9a-zA-Z -+]+?)\\&quot;,\\&quot;value\\&quot;:([0-9a-z.]+?)\},\{\\&quot;oddId\\&quot;:\\&quot;[0-9a-zA-Z-]+?\\&quot;,\\&quot;title\\&quot;:\\&quot;([0-9a-zA-Z -+]+?)\\&quot;,\\&quot;value\\&quot;:([0-9a-z.]+?)\},\{\\&quot;oddId\\&quot;:\\&quot;[0-9a-zA-Z-]+?\\&quot;,\\&quot;title\\&quot;:\\&quot;([0-9a-zA-Z -+]+?)\\&quot;,\\&quot;value\\&quot;:([0-9a-z.]+?)\},\{\\&quot;oddId\\&quot;:\\&quot;[0-9a-zA-Z-]+?\\&quot;,\\&quot;title\\&quot;:\\&quot;([0-9a-zA-Z -+]+?)\\&quot;,\\&quot;value\\&quot;:([0-9a-z.]+?)\}\],\\&quot;dealtCards\\&quot;:\[(.*?)\],\\&quot;playerId\\&quot;:\\&quot;([A-Za-z0-9_]+?)\\&quot;\},
+
+Match[1][1]=1
+Match[1][2]=
+Match[1][3]=Olesia
+Match[1][4]=Loses 3+
+Match[1][5]=1.2
+Match[1][6]=Nat Win 3+
+Match[1][7]=4.4
+Match[1][8]=Tie 2+
+Match[1][9]=11.5
+Match[1][10]=Win 3+
+Match[1][11]=1.2
+Match[1][12]=
+Match[1][13]=EVENT_2023_01_05_06_47_THU_1672899456_1</stringProp>
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_BankerPlayer</stringProp>
+              <stringProp name="RegexExtractor.regex">\{\\&quot;seat\\&quot;:([0-9]+?),\\&quot;isBanker\\&quot;:true,\\&quot;cards\\&quot;:\[(.*?)\],\\&quot;playerName\\&quot;:\\&quot;([A-Za-z0-9 ]+?)\\&quot;,\\&quot;odds\\&quot;:\[\{\\&quot;oddId\\&quot;:\\&quot;[0-9a-zA-Z-]+?\\&quot;,\\&quot;title\\&quot;:\\&quot;([0-9a-zA-Z -+]+?)\\&quot;,\\&quot;value\\&quot;:([0-9a-z.]+?)\},\{\\&quot;oddId\\&quot;:\\&quot;[0-9a-zA-Z-]+?\\&quot;,\\&quot;title\\&quot;:\\&quot;([0-9a-zA-Z -+]+?)\\&quot;,\\&quot;value\\&quot;:([0-9a-z.]+?)\},\{\\&quot;oddId\\&quot;:\\&quot;[0-9a-zA-Z-]+?\\&quot;,\\&quot;title\\&quot;:\\&quot;([0-9a-zA-Z -+]+?)\\&quot;,\\&quot;value\\&quot;:([0-9a-z.]+?)\},\{\\&quot;oddId\\&quot;:\\&quot;[0-9a-zA-Z-]+?\\&quot;,\\&quot;title\\&quot;:\\&quot;([0-9a-zA-Z -+]+?)\\&quot;,\\&quot;value\\&quot;:([0-9a-z.]+?)\}\],\\&quot;dealtCards\\&quot;:\[(.*?)\],\\&quot;playerId\\&quot;:\\&quot;([A-Za-z0-9_]+?)\\&quot;\}</stringProp>
+              <stringProp name="RegexExtractor.template">$1$$2$$3$$4$$5$$6$$7$$8$$9$$10$$11$$12$$13$</stringProp>
+              <stringProp name="RegexExtractor.default">c_BankerPlayer_NotFound</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_NormalPlayer" enabled="true">
+              <stringProp name="TestPlan.comments">\{\\&quot;seat\\&quot;:([0-9]+?),\\&quot;isBanker\\&quot;:false,\\&quot;cards\\&quot;:\[(.*?)\],\\&quot;playerName\\&quot;:\\&quot;([A-Za-z0-9 ]+?)\\&quot;,\\&quot;odds\\&quot;:\[\{\\&quot;oddId\\&quot;:\\&quot;[0-9a-zA-Z-]+?\\&quot;,\\&quot;title\\&quot;:\\&quot;([0-9a-zA-Z -+]+?)\\&quot;,\\&quot;value\\&quot;:([0-9a-z.]+?)\},\{\\&quot;oddId\\&quot;:\\&quot;[0-9a-zA-Z-]+?\\&quot;,\\&quot;title\\&quot;:\\&quot;([0-9a-zA-Z -+]+?)\\&quot;,\\&quot;value\\&quot;:([0-9a-z.]+?)\},\{\\&quot;oddId\\&quot;:\\&quot;[0-9a-zA-Z-]+?\\&quot;,\\&quot;title\\&quot;:\\&quot;([0-9a-zA-Z -+]+?)\\&quot;,\\&quot;value\\&quot;:([0-9a-z.]+?)\},\{\\&quot;oddId\\&quot;:\\&quot;[0-9a-zA-Z-]+?\\&quot;,\\&quot;title\\&quot;:\\&quot;[0-9a-zA-Z -+]+?\\&quot;,\\&quot;value\\&quot;:[0-9a-z.]+?\},\{\\&quot;oddId\\&quot;:\\&quot;[0-9a-zA-Z-]+?\\&quot;,\\&quot;title\\&quot;:\\&quot;([0-9a-zA-Z -+]+?)\\&quot;,\\&quot;value\\&quot;:([0-9a-z.]+?)\}\],\\&quot;dealtCards\\&quot;:\[(.*?)\],\\&quot;playerId\\&quot;:\\&quot;([A-Za-z0-9_]+?)\\&quot;\}
+
+Match[5][1]=3
+Match[5][2]=
+Match[5][3]=Oksana
+Match[5][4]=Nat Win
+Match[5][5]=5.1
+Match[5][6]=Tie
+Match[5][7]=9
+Match[5][8]=Win
+Match[5][9]=1
+Match[5][10]=Loss
+Match[5][11]=0.95
+Match[5][12]=
+Match[5][13]=EVENT_2023_01_05_06_47_THU_1672899456_3</stringProp>
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_NormalPlayer</stringProp>
+              <stringProp name="RegexExtractor.regex">\{\\&quot;seat\\&quot;:([0-9]+?),\\&quot;isBanker\\&quot;:false,\\&quot;cards\\&quot;:\[(.*?)\],\\&quot;playerName\\&quot;:\\&quot;([A-Za-z0-9 ]+?)\\&quot;,\\&quot;odds\\&quot;:\[\{\\&quot;oddId\\&quot;:\\&quot;[0-9a-zA-Z-]+?\\&quot;,\\&quot;title\\&quot;:\\&quot;([0-9a-zA-Z -+]+?)\\&quot;,\\&quot;value\\&quot;:([0-9a-z.]+?)\},\{\\&quot;oddId\\&quot;:\\&quot;[0-9a-zA-Z-]+?\\&quot;,\\&quot;title\\&quot;:\\&quot;([0-9a-zA-Z -+]+?)\\&quot;,\\&quot;value\\&quot;:([0-9a-z.]+?)\},\{\\&quot;oddId\\&quot;:\\&quot;[0-9a-zA-Z-]+?\\&quot;,\\&quot;title\\&quot;:\\&quot;([0-9a-zA-Z -+]+?)\\&quot;,\\&quot;value\\&quot;:([0-9a-z.]+?)\},\{\\&quot;oddId\\&quot;:\\&quot;[0-9a-zA-Z-]+?\\&quot;,\\&quot;title\\&quot;:\\&quot;[0-9a-zA-Z -+]+?\\&quot;,\\&quot;value\\&quot;:[0-9a-z.]+?\},\{\\&quot;oddId\\&quot;:\\&quot;[0-9a-zA-Z-]+?\\&quot;,\\&quot;title\\&quot;:\\&quot;([0-9a-zA-Z -+]+?)\\&quot;,\\&quot;value\\&quot;:([0-9a-z.]+?)\}\],\\&quot;dealtCards\\&quot;:\[(.*?)\],\\&quot;playerId\\&quot;:\\&quot;([A-Za-z0-9_]+?)\\&quot;\}</stringProp>
+              <stringProp name="RegexExtractor.template">$1$$2$$3$$4$$5$$6$$7$$8$$9$$10$$11$$12$$13$</stringProp>
+              <stringProp name="RegexExtractor.default">c_NormalPlayer_NotFound</stringProp>
+              <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_gameSessionId" enabled="true">
+              <stringProp name="TestPlan.comments">&quot;gameSessionId&quot;:&quot;EVENT_2023_01_05_06_47_THU_1672899456&quot;,
+
+</stringProp>
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_gameSessionId</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;gameSessionId&quot;:&quot;(.+?)&quot;,</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">c_gameSessionId_NotFound</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_state" enabled="true">
+              <stringProp name="TestPlan.comments">&quot;state&quot;:&quot;BET_ROUND_3_STARTED&quot;,</stringProp>
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_state</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;state&quot;:&quot;(.+?)&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">c_state_NotFound</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_endBettingRound" enabled="true">
+              <stringProp name="TestPlan.comments">&quot;endBettingRound\&quot;:\&quot;2023-01-08T07:25:24.531Z\&quot;}</stringProp>
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_endBettingRound</stringProp>
+              <stringProp name="RegexExtractor.regex">endBettingRound\\&quot;:\\&quot;[0-9-]+?T(.*?).[0-9]+?Z\\&quot;\}</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">c_endBettingRound_NotFound</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_serverTime" enabled="true">
+              <stringProp name="TestPlan.comments">],&quot;serverTime&quot;:&quot;2023-01-08T13:11:49.237Z&quot;,&quot;n</stringProp>
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_serverTime</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;serverTime&quot;:&quot;[0-9-]+?T(.*?).[0-9]+?Z&quot;,</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">c_serverTime_NotFound</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_Hand" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_Hand</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;hand&quot;:([0-9]+?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">c_Hand_NotFound</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">import java.text.SimpleDateFormat;
+import java.time.*;
+import java.time.format.*;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+String BetEndTime = vars.get(&quot;c_endBettingRound&quot;);
+String ServerTime = vars.get(&quot;c_serverTime&quot;);
+if(BetEndTime.equals(&quot;c_endBettingRound_NotFound&quot;)){
+	return 0;
+}else{
+	SimpleDateFormat sdf = new SimpleDateFormat(&quot;hh:mm:ss&quot;);
+	//long unixtime = sdf.parse(&quot;2017-03-21&quot;).getTime();
+	long unixtime = sdf.parse(&quot;${c_serverTime}&quot;).getTime();
+	vars.put(&quot;unixtime&quot;, String.valueOf(unixtime));
+//	log.info(String.valueOf(unixtime));
+	long unixtime01 = sdf.parse(&quot;${c_endBettingRound}&quot;).getTime();
+	vars.put(&quot;unixtime01&quot;, String.valueOf(unixtime01));
+//	log.info(String.valueOf(unixtime01));
+	long Sub = unixtime01 - unixtime ; 
+//	long Sub = 10810000 - 10716000;
+	int TT = Integer.parseInt(vars.get(&quot;TT&quot;).trim());
+	int NoOfBetsLoops = Sub/TT;
+	if(NoOfBetsLoops&gt;8)
+	{
+//		log.info(&quot;Into First Loop&quot;);
+		vars.put(&quot;NoOfBetsLoops&quot;, String.valueOf(NoOfBetsLoops));
+//		log.info(String.valueOf(NoOfBetsLoops));
+		NoOfBetsLoops = NoOfBetsLoops-10;
+		vars.put(&quot;NoOfBetsLoops&quot;, String.valueOf(NoOfBetsLoops));
+//		log.info(String.valueOf(NoOfBetsLoops));
+	}
+	else if(NoOfBetsLoops&lt;4){
+//		log.info(&quot;Into Second Loop&quot;);
+		vars.put(&quot;NoOfBetsLoops&quot;, String.valueOf(NoOfBetsLoops));
+//		log.info(String.valueOf(NoOfBetsLoops));
+		NoOfBetsLoops = 1;
+		vars.put(&quot;NoOfBetsLoops&quot;, String.valueOf(NoOfBetsLoops));
+//		log.info(String.valueOf(NoOfBetsLoops));
+	}else if(NoOfBetsLoops&lt;=3){
+//		log.info(&quot;Into Third Loop&quot;);
+		vars.put(&quot;NoOfBetsLoops&quot;, String.valueOf(NoOfBetsLoops));
+//		log.info(String.valueOf(NoOfBetsLoops));
+		NoOfBetsLoops = 0;
+		vars.put(&quot;NoOfBetsLoops&quot;, String.valueOf(NoOfBetsLoops));
+//		log.info(String.valueOf(NoOfBetsLoops));
+	}else{
+		vars.put(&quot;NoOfBetsLoops&quot;, String.valueOf(NoOfBetsLoops));
+		NoOfBetsLoops = 0;
+		vars.put(&quot;NoOfBetsLoops&quot;, String.valueOf(NoOfBetsLoops));
+	}
+//	log.info(&quot;Sub Value&quot;);
+	vars.put(&quot;Sub&quot;, String.valueOf(Sub));
+//	log.info(&quot;No of Bets&quot;);
+	vars.put(&quot;NoOfBetsLoops&quot;, String.valueOf(NoOfBetsLoops));
+//	log.info(&quot;Think Time&quot;);
+	vars.put(&quot;TT&quot;, String.valueOf(TT));
+//	log.info(String.valueOf(Sub));
+//	log.info(String.valueOf(NoOfBetsLoops));
+//	log.info(String.valueOf(TT));
+}</stringProp>
+              <stringProp name="scriptLanguage">bsh</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">2000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If controller to check whether the bet round is started or not" enabled="true">
+            <stringProp name="IfController.condition">(&quot;${c_state}&quot; == &quot;BET_ROUND_1_STARTED&quot; || &quot;${c_state}&quot; == &quot;BET_ROUND_2_STARTED&quot; || &quot;${c_state}&quot; == &quot;BET_ROUND_3_STARTED&quot; || &quot;${c_state}&quot; == &quot;BET_ROUND_4_STARTED&quot; || &quot;${c_state}&quot; == &quot;BET_ROUND_5_STARTED&quot;)</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+          </IfController>
+          <hashTree>
+            <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller - No of Bets to be Placed" enabled="true">
+              <boolProp name="LoopController.continue_forever">true</boolProp>
+              <stringProp name="LoopController.loops">${NoOfBetsLoops}</stringProp>
+            </LoopController>
+            <hashTree>
+              <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="p_Player.csv" enabled="false">
+                <stringProp name="filename">D:/IGS/Avantage1.0.0/QA/Scripts/p_Player.csv</stringProp>
+                <stringProp name="fileEncoding"></stringProp>
+                <stringProp name="variableNames">p_Player,p_PlaceBet,p_PlayerName</stringProp>
+                <boolProp name="ignoreFirstLine">true</boolProp>
+                <stringProp name="delimiter">,</stringProp>
+                <boolProp name="quotedData">false</boolProp>
+                <boolProp name="recycle">true</boolProp>
+                <boolProp name="stopThread">false</boolProp>
+                <stringProp name="shareMode">shareMode.group</stringProp>
+              </CSVDataSet>
+              <hashTree/>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="${c_state} - Hand - ${c_Hand}" enabled="true">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;query&quot;:&quot;mutation PlacePlay($input: PlacePlayInput!, $participantId: String!) {\n  placePlay(input: $input, participantId: $participantId) {\n    message\n    statusCode\n  }\n}\n&quot;,&quot;variables&quot;:{&quot;input&quot;:{&quot;plays&quot;:&quot;[{\&quot;odd\&quot;:{\&quot;title\&quot;:\&quot;${c_OddName}\&quot;,\&quot;value\&quot;:${c_oddvalue}},\&quot;points\&quot;:{\&quot;value\&quot;:10},\&quot;toPlayer\&quot;:{\&quot;playerName\&quot;:\&quot;${c_PlayerName}\&quot;,\&quot;seat\&quot;:${c_Seat},\&quot;playerId\&quot;:\&quot;${c_PlayerID}\&quot;},\&quot;currentHand\&quot;:[${c_DealtCards}]}]&quot;,&quot;gameSessionId&quot;:&quot;${c_gameSessionId}&quot;,&quot;round&quot;:&quot;${c_state}&quot;},&quot;participantId&quot;:&quot;${C_participantID}&quot;}}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${BASE_URL_8}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">/graphql</stringProp>
+                <stringProp name="HTTPSampler.method">POST</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              </HTTPSamplerProxy>
+              <hashTree>
+                <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                  <collectionProp name="HeaderManager.headers">
+                    <elementProp name="Authorization" elementType="Header">
+                      <stringProp name="Header.name">Authorization</stringProp>
+                      <stringProp name="Header.value">${accessToken}</stringProp>
+                    </elementProp>
+                    <elementProp name="Content-Type" elementType="Header">
+                      <stringProp name="Header.name">Content-Type</stringProp>
+                      <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                    </elementProp>
+                    <elementProp name="Accept" elementType="Header">
+                      <stringProp name="Header.name">Accept</stringProp>
+                      <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                    </elementProp>
+                    <elementProp name="x-amz-user-agent" elementType="Header">
+                      <stringProp name="Header.name">x-amz-user-agent</stringProp>
+                      <stringProp name="Header.value">aws-amplify/4.2.8 js</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </HeaderManager>
+                <hashTree/>
+                <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor - 04" enabled="true">
+                  <stringProp name="scriptLanguage">bsh</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">import java.util.*;
+import java.util.Random;
+
+String c_OddName;
+String c_oddvalue;
+String c_Seat;
+String c_Cards;
+String c_PlayerName;
+String c_DealtCards;
+String c_PlayerID;
+
+RepeatAgain:
+for(int b=1;b&lt;=20;b++){
+	int Rand = ${__Random(1,3,)};
+	if(Rand % 2 == 0){
+		String Seat = vars.get(&quot;c_BankerPlayer_g1&quot;);
+		String Cards = vars.get(&quot;c_BankerPlayer_g2&quot;);
+		String PlayerName = vars.get(&quot;c_BankerPlayer_g3&quot;);
+		String DealtCards = vars.get(&quot;c_BankerPlayer_g12&quot;);
+		String PlayerID = vars.get(&quot;c_BankerPlayer_g13&quot;);
+		int i = ${__Random(4,10,)};
+			for(;i&lt;=10;){
+//				int Y = ${__Random(4,10,)}; // Random number to pick 1 odd name and value out of different available options
+				int j = i+1;
+				if(i % 2 == 0)
+				{
+					i = i;
+					j = i+1;
+				}else{
+					j = i;
+					i = i-1;
+				}
+				String OddName = vars.get(&quot;c_BankerPlayer_g&quot; + i);
+//				log.info(&quot;Oddname = &quot;+OddName);
+//				log.info(&quot;I Value = &quot;+i);
+				String OddValue = vars.get(&quot;c_BankerPlayer_g&quot; + j);
+//				log.info(&quot;OddValue = &quot;+OddName);
+//				log.info(&quot;J Value = &quot;+j);
+				if(OddValue.equals(&quot;null&quot;)){
+					i=i+2;
+//					vars.put(&quot;c_OddName&quot;,&quot;&quot;);
+//					vars.put(&quot;c_oddvalue&quot;,&quot;&quot;);
+//					vars.put(&quot;c_Seat&quot;,Seat);
+//					vars.put(&quot;c_Cards&quot;,Cards);
+//					vars.put(&quot;c_PlayerName&quot;,PlayerName);
+//					vars.put(&quot;c_DealtCards&quot;,DealtCards);
+//					vars.put(&quot;c_PlayerID&quot;,PlayerID);
+				}else{
+					vars.put(&quot;c_OddName&quot;,OddName);
+					vars.put(&quot;c_oddvalue&quot;,OddValue);
+					vars.put(&quot;c_Seat&quot;,Seat);
+					vars.put(&quot;c_Cards&quot;,Cards);
+					vars.put(&quot;c_PlayerName&quot;,PlayerName);
+					vars.put(&quot;c_DealtCards&quot;,DealtCards);
+					vars.put(&quot;c_PlayerID&quot;,PlayerID);
+					return 0;
+				}
+			}
+	}else{
+		for(int a=1;a&lt;=20;a++){
+		int cRandPlayer = ${__Random(1,5,)}; // Random number to pick 1 player out of 5
+		String Seat = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g1&quot;);
+		String Cards = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g2&quot;);
+		String PlayerName = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g3&quot;);
+		String DealtCards = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g12&quot;);
+		String PlayerID = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g13&quot;);
+			int i = ${__Random(4,10,)};
+			for(;i&lt;=10;){
+//				int Y = ${__Random(4,10,)}; // Random number to pick 1 odd name and value out of different available options
+				int j = i+1;
+				if(i % 2 == 0)
+				{
+					i = i;
+					j = i+1;
+				}else{
+					j = i;
+					i = i-1;
+				}
+				String OddName = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g&quot; + i);
+//				log.info(&quot;Oddname = &quot;+OddName);
+//				log.info(&quot;I Value = &quot;+i);
+				String OddValue = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g&quot; + j);
+//				log.info(&quot;OddValue = &quot;+OddName);
+//				log.info(&quot;J Value = &quot;+j);
+				if(OddValue.equals(&quot;null&quot;)){
+					i=i+2;
+//					vars.put(&quot;c_OddName&quot;,&quot;&quot;);
+//					vars.put(&quot;c_oddvalue&quot;,&quot;&quot;);
+//					vars.put(&quot;c_Seat&quot;,Seat);
+//					vars.put(&quot;c_Cards&quot;,Cards);
+//					vars.put(&quot;c_PlayerName&quot;,PlayerName);
+//					vars.put(&quot;c_DealtCards&quot;,DealtCards);
+//					vars.put(&quot;c_PlayerID&quot;,PlayerID);
+				}else{
+					vars.put(&quot;c_OddName&quot;,OddName);
+					vars.put(&quot;c_oddvalue&quot;,OddValue);
+					vars.put(&quot;c_Seat&quot;,Seat);
+					vars.put(&quot;c_Cards&quot;,Cards);
+					vars.put(&quot;c_PlayerName&quot;,PlayerName);
+					vars.put(&quot;c_DealtCards&quot;,DealtCards);
+					vars.put(&quot;c_PlayerID&quot;,PlayerID);
+					return 0;
+				}
+			}
+		}
+	}
+}
+//if(c_oddvalue.equals(&quot;null&quot;)){
+//	return RepeatAgain;
+//}
+	</stringProp>
+                </JSR223PreProcessor>
+                <hashTree/>
+                <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor - 05" enabled="false">
+                  <stringProp name="scriptLanguage">bsh</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">import java.util.*;
+import java.util.Random;
+
+String c_OddName;
+String c_oddvalue;
+String c_Seat;
+String c_Cards;
+String c_PlayerName;
+String c_DealtCards;
+String c_PlayerID;
+
+int PlayerCount = Integer.parseInt(vars.get(&quot;p_Player&quot;).trim());
+//log.info(&quot;PlayerCount Value = &quot;+PlayerCount);
+for(;PlayerCount&lt;=6;PlayerCount++)
+{
+	String player = vars.get(&quot;p_PlayerName&quot;);
+//	log.info(&quot;Player name is &quot;+player);
+	String PlayerName = vars.get(&quot;c_BankerPlayer_g3&quot;);
+	vars.put(&quot;c_PlayerName&quot;,PlayerName);
+	if(player.equals(&quot;${c_PlayerName}&quot;))
+	{
+//		log.info(&quot;Here&quot;);
+		String Seat = vars.get(&quot;c_BankerPlayer_g1&quot;);
+		String Cards = vars.get(&quot;c_BankerPlayer_g2&quot;);
+		String PlayerName = vars.get(&quot;c_BankerPlayer_g3&quot;);
+		String DealtCards = vars.get(&quot;c_BankerPlayer_g12&quot;);
+		String PlayerID = vars.get(&quot;c_BankerPlayer_g13&quot;);
+		int i = Integer.parseInt(vars.get(&quot;p_PlaceBet&quot;).trim());
+//		log.info(&quot;Bet Value Value = &quot;+i);
+//		log.info(&quot;PlayerName = &quot;+PlayerName);
+//		log.info(&quot;PlayerID = &quot;+PlayerID);
+//		log.info(&quot;Seat = &quot;+Seat);
+		for(;i&lt;=10;){
+//			log.info(&quot;Here in If 1&quot;);
+			int j = i+1;
+//			log.info(&quot;J Value = &quot;+j);
+//			if(i % 2 == 0)
+//			{
+//				i = i;
+//				int j = i+1;
+//			}else{
+//				int j = i;
+//				i = i-1;
+//			}
+			String OddName = vars.get(&quot;c_BankerPlayer_g&quot; + i);
+//				log.info(&quot;Oddname = &quot;+OddName);
+//				log.info(&quot;I Value = &quot;+i);
+			String OddValue = vars.get(&quot;c_BankerPlayer_g&quot; + j);
+//				log.info(&quot;OddValue = &quot;+OddValue);
+//				log.info(&quot;J Value = &quot;+j);
+			if(OddValue.equals(&quot;null&quot;)){
+				i=i+2;
+//					vars.put(&quot;c_OddName&quot;,&quot;&quot;);
+//					vars.put(&quot;c_oddvalue&quot;,&quot;&quot;);
+//					vars.put(&quot;c_Seat&quot;,Seat);
+//					vars.put(&quot;c_Cards&quot;,Cards);
+//					vars.put(&quot;c_PlayerName&quot;,PlayerName);
+//					vars.put(&quot;c_DealtCards&quot;,DealtCards);
+//					vars.put(&quot;c_PlayerID&quot;,PlayerID);
+			}else{
+				vars.put(&quot;c_OddName&quot;,OddName);
+				vars.put(&quot;c_oddvalue&quot;,OddValue);
+				vars.put(&quot;c_Seat&quot;,Seat);
+				vars.put(&quot;c_Cards&quot;,Cards);
+				vars.put(&quot;c_PlayerName&quot;,PlayerName);
+				vars.put(&quot;c_DealtCards&quot;,DealtCards);
+				vars.put(&quot;c_PlayerID&quot;,PlayerID);
+				return 0;
+			}
+		}
+	}else{	
+		int cRandPlayer = PlayerCount;
+//		log.info(&quot;cRandPlayer Value = &quot;+cRandPlayer);
+		String Seat = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g1&quot;);
+		String Cards = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g2&quot;);
+		String PlayerName = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g3&quot;);
+		String DealtCards = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g12&quot;);
+		String PlayerID = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g13&quot;);
+		int i = Integer.parseInt(vars.get(&quot;p_PlaceBet&quot;).trim());
+//		log.info(&quot;Player bet Value = &quot;+i);
+//		log.info(&quot;PlayerName = &quot;+PlayerName);
+//		log.info(&quot;PlayerID = &quot;+PlayerID);
+//		log.info(&quot;Seat = &quot;+Seat);
+		for(;i&lt;=10;)
+		{
+//			log.info(&quot;Here&quot;);
+//			log.info(&quot;Here in If 1&quot;);
+			int j = i+1;
+//			if(i % 2 == 0)
+//			{
+//				i = i;
+//				int j = i+1;
+//			}else{
+//				int j = i;
+//				i = i-1;
+//			}
+			String OddName = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g&quot; + i);
+//				log.info(&quot;Oddname = &quot;+OddName);
+//				log.info(&quot;I Value = &quot;+i);
+			String OddValue = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g&quot; + j);
+//				log.info(&quot;OddValue = &quot;+OddValue);
+//				log.info(&quot;J Value = &quot;+j);
+			if(OddValue.equals(&quot;null&quot;)){
+				i=i+2;
+//					vars.put(&quot;c_OddName&quot;,&quot;&quot;);
+//					vars.put(&quot;c_oddvalue&quot;,&quot;&quot;);
+//					vars.put(&quot;c_Seat&quot;,Seat);
+//					vars.put(&quot;c_Cards&quot;,Cards);
+//					vars.put(&quot;c_PlayerName&quot;,PlayerName);
+//					vars.put(&quot;c_DealtCards&quot;,DealtCards);
+//					vars.put(&quot;c_PlayerID&quot;,PlayerID);
+			}else{
+				vars.put(&quot;c_OddName&quot;,OddName);
+				vars.put(&quot;c_oddvalue&quot;,OddValue);
+				vars.put(&quot;c_Seat&quot;,Seat);
+				vars.put(&quot;c_Cards&quot;,Cards);
+				vars.put(&quot;c_PlayerName&quot;,PlayerName);
+				vars.put(&quot;c_DealtCards&quot;,DealtCards);
+				vars.put(&quot;c_PlayerID&quot;,PlayerID);
+				return 0;
+			}
+		}
+			
+	}
+}
+
+
+
+/*
+
+
+RepeatAgain:
+for(int b=1;b&lt;=20;b++){
+	int Rand = ${__Random(1,3,)};
+	if(Rand % 2 == 0){
+		String Seat = vars.get(&quot;c_BankerPlayer_g1&quot;);
+		String Cards = vars.get(&quot;c_BankerPlayer_g2&quot;);
+		String PlayerName = vars.get(&quot;c_BankerPlayer_g3&quot;);
+		String DealtCards = vars.get(&quot;c_BankerPlayer_g12&quot;);
+		String PlayerID = vars.get(&quot;c_BankerPlayer_g13&quot;);
+		int i = ${__Random(4,10,)};
+			for(;i&lt;=10;){
+//				int Y = ${__Random(4,10,)}; // Random number to pick 1 odd name and value out of different available options
+				int j = i+1;
+				if(i % 2 == 0)
+				{
+					i = i;
+					j = i+1;
+				}else{
+					j = i;
+					i = i-1;
+				}
+				String OddName = vars.get(&quot;c_BankerPlayer_g&quot; + i);
+//				log.info(&quot;Oddname = &quot;+OddName);
+//				log.info(&quot;I Value = &quot;+i);
+				String OddValue = vars.get(&quot;c_BankerPlayer_g&quot; + j);
+//				log.info(&quot;OddValue = &quot;+OddName);
+//				log.info(&quot;J Value = &quot;+j);
+				if(OddValue.equals(&quot;null&quot;)){
+					i=i+2;
+//					vars.put(&quot;c_OddName&quot;,&quot;&quot;);
+//					vars.put(&quot;c_oddvalue&quot;,&quot;&quot;);
+//					vars.put(&quot;c_Seat&quot;,Seat);
+//					vars.put(&quot;c_Cards&quot;,Cards);
+//					vars.put(&quot;c_PlayerName&quot;,PlayerName);
+//					vars.put(&quot;c_DealtCards&quot;,DealtCards);
+//					vars.put(&quot;c_PlayerID&quot;,PlayerID);
+				}else{
+					vars.put(&quot;c_OddName&quot;,OddName);
+					vars.put(&quot;c_oddvalue&quot;,OddValue);
+					vars.put(&quot;c_Seat&quot;,Seat);
+					vars.put(&quot;c_Cards&quot;,Cards);
+					vars.put(&quot;c_PlayerName&quot;,PlayerName);
+					vars.put(&quot;c_DealtCards&quot;,DealtCards);
+					vars.put(&quot;c_PlayerID&quot;,PlayerID);
+					return 0;
+				}
+			}
+	}else{
+		for(int a=1;a&lt;=20;a++){
+		int cRandPlayer = ${__Random(1,5,)}; // Random number to pick 1 player out of 5
+		String Seat = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g1&quot;);
+		String Cards = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g2&quot;);
+		String PlayerName = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g3&quot;);
+		String DealtCards = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g12&quot;);
+		String PlayerID = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g13&quot;);
+			int i = ${__Random(4,10,)};
+			for(;i&lt;=10;){
+//				int Y = ${__Random(4,10,)}; // Random number to pick 1 odd name and value out of different available options
+				int j = i+1;
+				if(i % 2 == 0)
+				{
+					i = i;
+					j = i+1;
+				}else{
+					j = i;
+					i = i-1;
+				}
+				String OddName = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g&quot; + i);
+//				log.info(&quot;Oddname = &quot;+OddName);
+//				log.info(&quot;I Value = &quot;+i);
+				String OddValue = vars.get(&quot;c_NormalPlayer_&quot; + cRandPlayer +&quot;_g&quot; + j);
+//				log.info(&quot;OddValue = &quot;+OddName);
+//				log.info(&quot;J Value = &quot;+j);
+				if(OddValue.equals(&quot;null&quot;)){
+					i=i+2;
+//					vars.put(&quot;c_OddName&quot;,&quot;&quot;);
+//					vars.put(&quot;c_oddvalue&quot;,&quot;&quot;);
+//					vars.put(&quot;c_Seat&quot;,Seat);
+//					vars.put(&quot;c_Cards&quot;,Cards);
+//					vars.put(&quot;c_PlayerName&quot;,PlayerName);
+//					vars.put(&quot;c_DealtCards&quot;,DealtCards);
+//					vars.put(&quot;c_PlayerID&quot;,PlayerID);
+				}else{
+					vars.put(&quot;c_OddName&quot;,OddName);
+					vars.put(&quot;c_oddvalue&quot;,OddValue);
+					vars.put(&quot;c_Seat&quot;,Seat);
+					vars.put(&quot;c_Cards&quot;,Cards);
+					vars.put(&quot;c_PlayerName&quot;,PlayerName);
+					vars.put(&quot;c_DealtCards&quot;,DealtCards);
+					vars.put(&quot;c_PlayerID&quot;,PlayerID);
+					return 0;
+				}
+			}
+		}
+	}
+}
+//if(c_oddvalue.equals(&quot;null&quot;)){
+//	return RepeatAgain;
+//}
+
+*/</stringProp>
+                </JSR223PreProcessor>
+                <hashTree/>
+                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                  <collectionProp name="Asserion.test_strings">
+                    <stringProp name="-1629382471">&quot;statusCode&quot;:&quot;200&quot;</stringProp>
+                  </collectionProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
+                  <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                  <boolProp name="Assertion.assume_success">false</boolProp>
+                  <intProp name="Assertion.test_type">2</intProp>
+                </ResponseAssertion>
+                <hashTree/>
+                <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+                  <stringProp name="ConstantTimer.delay">${TT}</stringProp>
+                </ConstantTimer>
+                <hashTree/>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="c_statusCode" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">c_statusCode</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$..statusCode</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="c_betmsg" enabled="true">
+                  <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                  <stringProp name="BoundaryExtractor.refname">c_betmsg</stringProp>
+                  <stringProp name="BoundaryExtractor.lboundary">{&quot;message&quot;:&quot;{\&quot;id\&quot;:\&quot;</stringProp>
+                  <stringProp name="BoundaryExtractor.rboundary">\&quot;</stringProp>
+                  <stringProp name="BoundaryExtractor.default"></stringProp>
+                  <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                  <stringProp name="BoundaryExtractor.match_number"></stringProp>
+                </BoundaryExtractor>
+                <hashTree/>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="c_unAuth" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">c_unAuth</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$..errorType</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="c_placePlaymsg" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">c_placePlaymsg</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$..placePlay</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <boolProp name="resetInterpreter">false</boolProp>
+                  <stringProp name="script">BetMsg = vars.get(&quot;c_placePlaymsg&quot;);
+username = vars.get(&quot;userName&quot;);
+f = new FileOutputStream(&quot;D:/IGS/Avantage1.0.0/QA/0304_100U_642a60f19995046c86784f59.csv&quot;, true);
+p = new PrintStream(f);
+this.interpreter.setOut(p);
+print(username+&quot;,&quot;+BetMsg);
+f.close();</stringProp>
+                </BeanShellPostProcessor>
+                <hashTree/>
+              </hashTree>
+              <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="false">
+                <boolProp name="displayJMeterProperties">false</boolProp>
+                <boolProp name="displayJMeterVariables">true</boolProp>
+                <boolProp name="displaySystemProperties">false</boolProp>
+              </DebugSampler>
+              <hashTree/>
+              <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+                <stringProp name="IfController.condition">&quot;${c_betmsg}&quot; == &quot;BETTING_ROUND_EXPIRED&quot;</stringProp>
+                <boolProp name="IfController.evaluateAll">false</boolProp>
+              </IfController>
+              <hashTree>
+                <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="true">
+                  <intProp name="ActionProcessor.action">5</intProp>
+                  <intProp name="ActionProcessor.target">0</intProp>
+                  <stringProp name="ActionProcessor.duration">10000</stringProp>
+                </TestAction>
+                <hashTree/>
+              </hashTree>
+              <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+                <stringProp name="IfController.condition">(&quot;${c_betmsg}&quot; == &quot;NOT_ENOUGH_POINTS&quot;||&quot;${c_statusCode}&quot; == 500||&quot;${c_unAuth}&quot; == &quot;UnauthorizedException&quot;)</stringProp>
+                <boolProp name="IfController.evaluateAll">false</boolProp>
+              </IfController>
+              <hashTree>
+                <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="true">
+                  <intProp name="ActionProcessor.action">0</intProp>
+                  <intProp name="ActionProcessor.target">0</intProp>
+                  <stringProp name="ActionProcessor.duration">10000</stringProp>
+                </TestAction>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+            <stringProp name="IfController.condition">(&quot;${c_state}&quot; == &quot;BET_ROUND_FINISHED&quot; || &quot;${c_state}&quot; == &quot;HAND_FINISHED&quot; || &quot;${c_state}&quot; == &quot;CARD_DEALT_1&quot; || &quot;${c_state}&quot; == &quot;CARD_DEALT_2&quot; || &quot;${c_state}&quot; == &quot;CARD_DEALT_3&quot; || &quot;${c_state}&quot; == &quot;CARD_DEALT_4&quot; || &quot;${c_state}&quot; == &quot;CARD_DEALT_5&quot; || &quot;${c_state}&quot; == &quot;NEW_SHOE&quot; || &quot;${c_state}&quot;== &quot;CARDS_EXPOSING_1&quot;|| &quot;${c_state}&quot;== &quot;CARDS_EXPOSING_2&quot;|| &quot;${c_state}&quot;== &quot;CARDS_EXPOSING_3&quot;|| &quot;${c_state}&quot;== &quot;CARDS_EXPOSING_4&quot;|| &quot;${c_state}&quot;== &quot;CARDS_EXPOSING_5&quot; || &quot;${c_state}&quot;== &quot;CARDS_DEALING_1&quot; || &quot;${c_state}&quot;== &quot;CARDS_DEALING_2&quot; || &quot;${c_state}&quot;== &quot;CARDS_DEALING_3&quot; || &quot;${c_state}&quot;== &quot;CARDS_DEALING_4&quot; || &quot;${c_state}&quot;== &quot;CARDS_DEALING_5&quot; || &quot;${c_state}&quot; == &quot;READY_FOR_BET_ROUND&quot; || &quot;${c_state}&quot; == &quot;BANKER_3_CARD_DEALT&quot; || &quot;${c_state}&quot; == &quot;BANKER_2_CARD_DEALT&quot; || &quot;${c_state}&quot; == &quot;BANKER_1_CARD_DEALT&quot; || &quot;${c_state}&quot; == &quot;BANKER_4_CARD_DEALT&quot; || &quot;${c_state}&quot; == &quot;BANKER_5_CARD_DEALT&quot;)</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+          </IfController>
+          <hashTree>
+            <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="true">
+              <intProp name="ActionProcessor.action">1</intProp>
+              <intProp name="ActionProcessor.target">0</intProp>
+              <stringProp name="ActionProcessor.duration">10000</stringProp>
+            </TestAction>
+            <hashTree/>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller - If Event is Finished - Stop the test" enabled="true">
+            <stringProp name="IfController.condition">&quot;${c_state}&quot; == &quot;EVENT_FINISHED&quot;</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+          </IfController>
+          <hashTree>
+            <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="true">
+              <intProp name="ActionProcessor.action">0</intProp>
+              <intProp name="ActionProcessor.target">2</intProp>
+              <stringProp name="ActionProcessor.duration">10000</stringProp>
+            </TestAction>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">D:\IGS\Avantage1.0.0\QA\Results\Apr\3\QA_100U_642a60f19995046c86784f59_0304231105_test03.jtl</stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">D:\IGS\Avantage1.0.0\QA\Results\Apr\3\QA_100U_642a60f19995046c86784f59_0304231105_test01.jtl</stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

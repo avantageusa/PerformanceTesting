@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="AWS Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments">JMeter Test Plan to execute test over aws services.</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="p_CompetitionID" elementType="Argument">
+            <stringProp name="Argument.name">p_CompetitionID</stringProp>
+            <stringProp name="Argument.value">6285d5cfd4c6e95ab89b803f</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="false">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="false">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+        <boolProp name="CacheManager.controlledByThread">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Kinesis Thread Group" enabled="false">
+        <stringProp name="TestPlan.comments">Thread group to execute load testing over aws kinesis data stream.</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Partition Key Counter" enabled="true">
+          <stringProp name="CounterConfig.start">0</stringProp>
+          <stringProp name="CounterConfig.end"></stringProp>
+          <stringProp name="CounterConfig.incr">1</stringProp>
+          <stringProp name="CounterConfig.name">partition_key_counter</stringProp>
+          <stringProp name="CounterConfig.format"></stringProp>
+          <boolProp name="CounterConfig.per_user">true</boolProp>
+          <stringProp name="TestPlan.comments">Counter as parition key to distribute data records across all shards in Kinesis Data Stream.</stringProp>
+        </CounterConfig>
+        <hashTree/>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+          <stringProp name="ConstantTimer.delay">1000</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+        <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="Kinesis Producer" enabled="true">
+          <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="aws_access_key_id" elementType="Argument">
+                <stringProp name="Argument.name">aws_access_key_id</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_secret_access_key" elementType="Argument">
+                <stringProp name="Argument.name">aws_secret_access_key</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_session_token" elementType="Argument">
+                <stringProp name="Argument.name">aws_session_token</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_region" elementType="Argument">
+                <stringProp name="Argument.name">aws_region</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_configure_profile" elementType="Argument">
+                <stringProp name="Argument.name">aws_configure_profile</stringProp>
+                <stringProp name="Argument.value">default</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="kinesis_stream_name" elementType="Argument">
+                <stringProp name="Argument.name">kinesis_stream_name</stringProp>
+                <stringProp name="Argument.value">client-stream</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="partition_key" elementType="Argument">
+                <stringProp name="Argument.name">partition_key</stringProp>
+                <stringProp name="Argument.value">${partition_key_counter}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="data_record" elementType="Argument">
+                <stringProp name="Argument.name">data_record</stringProp>
+                <stringProp name="Argument.value">{        &quot;tool&quot;: &quot;JMeter&quot;,     &quot;plugin&quot;: &quot;awsmeter&quot;,     &quot;service&quot;: &quot;Kinesis Data Stream&quot;,     &quot;message&quot;: &quot;Hello awsmeter JMeter plugin&quot;,     &quot;time&quot;: &quot;${__time()}&quot; }</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="classname">org.apache.jmeter.protocol.aws.kinesis.KinesisProducerSampler</stringProp>
+        </JavaSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SQS Standard Queue Thread Group" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="TestPlan.comments">Thread group to execute load testing over aws sqs standard queue.</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="SQS Standard Queue Producer" enabled="true">
+          <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="aws_access_key_id" elementType="Argument">
+                <stringProp name="Argument.name">aws_access_key_id</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_secret_access_key" elementType="Argument">
+                <stringProp name="Argument.name">aws_secret_access_key</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_session_token" elementType="Argument">
+                <stringProp name="Argument.name">aws_session_token</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_region" elementType="Argument">
+                <stringProp name="Argument.name">aws_region</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_configure_profile" elementType="Argument">
+                <stringProp name="Argument.name">aws_configure_profile</stringProp>
+                <stringProp name="Argument.value">default</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sqs_queue_name" elementType="Argument">
+                <stringProp name="Argument.name">sqs_queue_name</stringProp>
+                <stringProp name="Argument.value">customer-request</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sqs_msg_body" elementType="Argument">
+                <stringProp name="Argument.name">sqs_msg_body</stringProp>
+                <stringProp name="Argument.value">{        &quot;tool&quot;: &quot;JMeter&quot;,     &quot;plugin&quot;: &quot;awsmeter&quot;,     &quot;service&quot;: &quot;SQS Standard Queue&quot;,     &quot;message&quot;: &quot;Hello awsmeter JMeter plugin&quot;,     &quot;time&quot;: &quot;${__time()}&quot; }</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sqs_msg_attributes" elementType="Argument">
+                <stringProp name="Argument.name">sqs_msg_attributes</stringProp>
+                <stringProp name="Argument.value">[     {         &quot;name&quot;: &quot;attribute-1&quot;,         &quot;type&quot;: &quot;String&quot;,         &quot;value&quot;: &quot;aws&quot;     },     {         &quot;name&quot;: &quot;attribute-2&quot;,         &quot;type&quot;: &quot;String&quot;,         &quot;value&quot;: &quot;meter&quot;     },     {         &quot;name&quot;: &quot;attribute-3&quot;,         &quot;type&quot;: &quot;String.custom&quot;,         &quot;value&quot;: &quot;sqs&quot;     },     {         &quot;name&quot;: &quot;attribute-4&quot;,         &quot;type&quot;: &quot;Number&quot;,         &quot;value&quot;: &quot;123&quot;     },     {         &quot;name&quot;: &quot;attribute-5&quot;,         &quot;type&quot;: &quot;Number&quot;,         &quot;value&quot;: &quot;456&quot;     },         {         &quot;name&quot;: &quot;attribute-6&quot;,         &quot;type&quot;: &quot;Number.int&quot;,         &quot;value&quot;: &quot;789&quot;     },     {         &quot;name&quot;: &quot;attribute-7&quot;,         &quot;type&quot;: &quot;Binary&quot;,         &quot;value&quot;: &quot;01100001 01110111 01110011&quot;     },     {         &quot;name&quot;: &quot;attribute-8&quot;,         &quot;type&quot;: &quot;Binary&quot;,         &quot;value&quot;: &quot;01101101 01100101 01110100 01100101 01110010&quot;     },     {         &quot;name&quot;: &quot;attribute-9&quot;,         &quot;type&quot;: &quot;Binary.img&quot;,         &quot;value&quot;: &quot;01101101 01100101 01110100 01100101 01110010&quot;     } ]</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sqs_delay_seconds" elementType="Argument">
+                <stringProp name="Argument.name">sqs_delay_seconds</stringProp>
+                <stringProp name="Argument.value">0</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="classname">org.apache.jmeter.protocol.aws.sqs.SQSProducerStandardQueue</stringProp>
+        </JavaSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SQS FIFO Queue Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">120</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+        <stringProp name="TestPlan.comments">Thread group to execute load testing over aws sqs fifo queue.</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">C:/Users/IGS/Projects/Avantage/SQS/SQS_ParticipantIds.csv</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.group</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">p_ParticipantID</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Deduplication Id" enabled="true">
+          <stringProp name="maximumValue">9999999999</stringProp>
+          <stringProp name="minimumValue">1000000000</stringProp>
+          <stringProp name="outputFormat">0000000000</stringProp>
+          <boolProp name="perThread">false</boolProp>
+          <stringProp name="randomSeed">${__time()}</stringProp>
+          <stringProp name="variableName">msg_deduplication_id</stringProp>
+        </RandomVariableConfig>
+        <hashTree/>
+        <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="startEvent" enabled="false">
+          <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="aws_access_key_id" elementType="Argument">
+                <stringProp name="Argument.name">aws_access_key_id</stringProp>
+                <stringProp name="Argument.value">ASIA5DJ76ROQRKSOANFU</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_secret_access_key" elementType="Argument">
+                <stringProp name="Argument.name">aws_secret_access_key</stringProp>
+                <stringProp name="Argument.value">RDGEZ+ZKQGLx+Lkltv4aVQXW1LVn7x9hb65yi1KS</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_session_token" elementType="Argument">
+                <stringProp name="Argument.name">aws_session_token</stringProp>
+                <stringProp name="Argument.value">FwoGZXIvYXdzEIb//////////wEaDEt5jtIISdW2OPUA2iL6AXsJ38Cmj/KNlpNaXz4TXgugmxFFEx48Cl6t6RuQ++DGVub4xAGSUxYSdZBGCe0RLitQq2/11jdXi1ku/FbExT30rDNvDCj9HGUkd4whdS29XxFQL0Xn/MBahddTIIU8Tc7a1oBMaZDHfPICDexTb56Me7bNNIjQ1C1u3N8KNMUU8mO96fbk0zoZuD64Vv/PrCwLRt7YbeIDBs8xPPbmN71uwW1qSrKZXxeKGZexWQCepUQs6mp/Y+x86iaOtaL1Lay5+iY6hoyMiNZuXMWGplmDfowzAJsRy3di+0EU9QkpfttWp3n9X4ldmEF+dD5l++4h7mj54jWHMLkohOz1kwYyK6YT26sO7SgKsHFa1iRepaf4T1QMOhMNo2gS7mZidJJShB83/ou2uoaTBSE=</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_region" elementType="Argument">
+                <stringProp name="Argument.name">aws_region</stringProp>
+                <stringProp name="Argument.value">eu-west-2</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_configure_profile" elementType="Argument">
+                <stringProp name="Argument.name">aws_configure_profile</stringProp>
+                <stringProp name="Argument.value">avSb</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sqs_queue_name" elementType="Argument">
+                <stringProp name="Argument.name">sqs_queue_name</stringProp>
+                <stringProp name="Argument.value">qc-competition-engine-tf-mixed-events.fifo</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sqs_msg_body" elementType="Argument">
+                <stringProp name="Argument.name">sqs_msg_body</stringProp>
+                <stringProp name="Argument.value">   {             &quot;action&quot;: &quot;startedEvent&quot;,             &quot;payload&quot;: {                 &quot;eventId&quot;: &quot;Deo56&quot;,                 &quot;timestamp&quot;: &quot;1234&quot;             }         }</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sqs_msg_attributes" elementType="Argument">
+                <stringProp name="Argument.name">sqs_msg_attributes</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sqs_msg_group_id" elementType="Argument">
+                <stringProp name="Argument.name">sqs_msg_group_id</stringProp>
+                <stringProp name="Argument.value">012</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sqs_msg_deduplication_id" elementType="Argument">
+                <stringProp name="Argument.name">sqs_msg_deduplication_id</stringProp>
+                <stringProp name="Argument.value">${msg_deduplication_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="classname">org.apache.jmeter.protocol.aws.sqs.SQSProducerFifoQueue</stringProp>
+        </JavaSampler>
+        <hashTree/>
+        <eu.luminis.jmeter.wssampler.OpenWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.OpenWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.OpenWebSocketSampler" testname="WebSocket Open Connection" enabled="true">
+          <boolProp name="TLS">true</boolProp>
+          <stringProp name="server">47betv4g8d.execute-api.eu-west-2.amazonaws.com</stringProp>
+          <stringProp name="port">443</stringProp>
+          <stringProp name="path">qc</stringProp>
+          <stringProp name="connectTimeout">120000</stringProp>
+          <stringProp name="readTimeout">6000</stringProp>
+        </eu.luminis.jmeter.wssampler.OpenWebSocketSampler>
+        <hashTree/>
+        <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler" enabled="true">
+          <boolProp name="TLS">false</boolProp>
+          <stringProp name="server"></stringProp>
+          <stringProp name="port">80</stringProp>
+          <stringProp name="path"></stringProp>
+          <stringProp name="connectTimeout">20000</stringProp>
+          <boolProp name="binaryPayload">false</boolProp>
+          <stringProp name="requestData">{
+
+&quot;action&quot;: &quot;subscribeToAParticipantLeaderboard&quot;,
+
+&quot;subscriptionKey&quot;: &quot;${p_ParticipantID}&quot;
+
+}</stringProp>
+          <boolProp name="createNewConnection">false</boolProp>
+          <boolProp name="loadDataFromFile">false</boolProp>
+          <stringProp name="dataFile"></stringProp>
+        </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+            <stringProp name="ConstantTimer.delay">2000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">40</stringProp>
+        </LoopController>
+        <hashTree>
+          <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="Make Plays - Power Admin 1 Bet" enabled="true">
+            <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="aws_access_key_id" elementType="Argument">
+                  <stringProp name="Argument.name">aws_access_key_id</stringProp>
+                  <stringProp name="Argument.value">ASIATXXKAOSRSSYEDDMT</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="aws_secret_access_key" elementType="Argument">
+                  <stringProp name="Argument.name">aws_secret_access_key</stringProp>
+                  <stringProp name="Argument.value">63io6Z/KF++vcO0pg3A2EXM3UREdS5A8uQkQYc2c</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="aws_session_token" elementType="Argument">
+                  <stringProp name="Argument.name">aws_session_token</stringProp>
+                  <stringProp name="Argument.value">FwoGZXIvYXdzECcaDHtoP9FUPl4wv9w68SKrAQOfuIRD93wVFgBhfXq56vITt4aa8X7nY8NauPO9UPBfkc7hjV3gEeF70Qhveo/cjFhn/GiJEIBrrEEvhIaN9wvfo9Dn8qXZmTv47YPjuWzciwTZ8G3rdHsYfBuhjP8MapUK0Jfhnv+hc2daVIg6X0jyOHOsN0GA+xGVga4xb7heJt2zA8ZKndBmiPyHsxk1RB3t5VFR3AeIVvS9Vw3LgrjuKqUdR9qkVRViLSiAo9GUBjItMHn8ddCjubGmh8bY6P8tOUvYKpXP+cf6AyLsbS/TSYnxBvGoHbvP6d4+gV7i</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="aws_region" elementType="Argument">
+                  <stringProp name="Argument.name">aws_region</stringProp>
+                  <stringProp name="Argument.value">eu-west-2</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="aws_configure_profile" elementType="Argument">
+                  <stringProp name="Argument.name">aws_configure_profile</stringProp>
+                  <stringProp name="Argument.value">avSbd</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="sqs_queue_name" elementType="Argument">
+                  <stringProp name="Argument.name">sqs_queue_name</stringProp>
+                  <stringProp name="Argument.value">qc-competition-engine-tf-mixed-plays.fifo</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="sqs_msg_body" elementType="Argument">
+                  <stringProp name="Argument.name">sqs_msg_body</stringProp>
+                  <stringProp name="Argument.value">{     &quot;action&quot;: &quot;placePlays&quot;,     &quot;payload&quot;: {         &quot;participantId&quot;: &quot;${p_ParticipantID}&quot;,         &quot;gsid&quot;: &quot;${__RandomString(32,ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,)}&quot;,         &quot;plays&quot;: [             {                 &quot;betId&quot;: &quot;${__UUID}&quot;,                 &quot;stake&quot;: 10,                 &quot;type&quot;: &quot;Regular&quot;             }         ]     } }</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="sqs_msg_attributes" elementType="Argument">
+                  <stringProp name="Argument.name">sqs_msg_attributes</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="sqs_msg_group_id" elementType="Argument">
+                  <stringProp name="Argument.name">sqs_msg_group_id</stringProp>
+                  <stringProp name="Argument.value">${__Random(10000001,99999999,)}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="sqs_msg_deduplication_id" elementType="Argument">
+                  <stringProp name="Argument.name">sqs_msg_deduplication_id</stringProp>
+                  <stringProp name="Argument.value">${__Random(1000000001,9999999999,)}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="classname">org.apache.jmeter.protocol.aws.sqs.SQSProducerFifoQueue</stringProp>
+          </JavaSampler>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="302682100">Message id</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">41</stringProp>
+        </LoopController>
+        <hashTree>
+          <eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler" testname="WebSocket Single Read Sampler" enabled="true">
+            <boolProp name="TLS">false</boolProp>
+            <stringProp name="server"></stringProp>
+            <stringProp name="port">80</stringProp>
+            <stringProp name="path"></stringProp>
+            <stringProp name="connectTimeout">20000</stringProp>
+            <stringProp name="dataType">Text</stringProp>
+            <boolProp name="createNewConnection">false</boolProp>
+            <stringProp name="readTimeout">1000</stringProp>
+            <boolProp name="optional">false</boolProp>
+          </eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler>
+          <hashTree/>
+        </hashTree>
+        <eu.luminis.jmeter.wssampler.CloseWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.CloseWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.CloseWebSocketSampler" testname="WebSocket Close" enabled="true">
+          <stringProp name="statusCode">1000</stringProp>
+          <stringProp name="readTimeout">6000</stringProp>
+        </eu.luminis.jmeter.wssampler.CloseWebSocketSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SNS Standard Topic Thread Group" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="TestPlan.comments">Thread group to execute load testing over aws sns standard topic.</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="SNS Standard Topic Producer" enabled="true">
+          <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="aws_access_key_id" elementType="Argument">
+                <stringProp name="Argument.name">aws_access_key_id</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_secret_access_key" elementType="Argument">
+                <stringProp name="Argument.name">aws_secret_access_key</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_session_token" elementType="Argument">
+                <stringProp name="Argument.name">aws_session_token</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_region" elementType="Argument">
+                <stringProp name="Argument.name">aws_region</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_configure_profile" elementType="Argument">
+                <stringProp name="Argument.name">aws_configure_profile</stringProp>
+                <stringProp name="Argument.value">default</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sns_topic_arn" elementType="Argument">
+                <stringProp name="Argument.name">sns_topic_arn</stringProp>
+                <stringProp name="Argument.value">arn:aws:sns:us-east-2:688514412000:customer-topic</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sns_msg_body" elementType="Argument">
+                <stringProp name="Argument.name">sns_msg_body</stringProp>
+                <stringProp name="Argument.value">{        &quot;tool&quot;: &quot;JMeter&quot;,     &quot;plugin&quot;: &quot;awsmeter&quot;,     &quot;service&quot;: &quot;SNS Standard Topic&quot;,     &quot;message&quot;: &quot;Hello awsmeter JMeter plugin&quot;,     &quot;time&quot;: &quot;${__time()}&quot; }</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sns_msg_attributes" elementType="Argument">
+                <stringProp name="Argument.name">sns_msg_attributes</stringProp>
+                <stringProp name="Argument.value">[     {         &quot;name&quot;: &quot;attribute-1&quot;,         &quot;type&quot;: &quot;String&quot;,         &quot;value&quot;: &quot;wholesale&quot;     },     {         &quot;name&quot;: &quot;attribute-2&quot;,         &quot;type&quot;: &quot;String&quot;,         &quot;value&quot;: &quot;retail&quot;     },     {         &quot;name&quot;: &quot;attribute-3&quot;,         &quot;type&quot;: &quot;String.Array&quot;,         &quot;value&quot;: &quot;wholesale,retail&quot;     },     {         &quot;name&quot;: &quot;attribute-4&quot;,         &quot;type&quot;: &quot;Number&quot;,         &quot;value&quot;: &quot;123&quot;     },     {         &quot;name&quot;: &quot;attribute-5&quot;,         &quot;type&quot;: &quot;Number&quot;,         &quot;value&quot;: &quot;456&quot;     },     {         &quot;name&quot;: &quot;attribute-6&quot;,         &quot;type&quot;: &quot;String.Array&quot;,         &quot;value&quot;: &quot;123,456&quot;     },     {         &quot;name&quot;: &quot;attribute-7&quot;,         &quot;type&quot;: &quot;Binary&quot;,         &quot;value&quot;: &quot;01101101 01100101 01110100 01100101 01110010&quot;     },     {         &quot;name&quot;: &quot;attribute-8&quot;,         &quot;type&quot;: &quot;Binary&quot;,         &quot;value&quot;: &quot;01101101 01100101 01110100 01100101 01110010&quot;     } ]</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="classname">org.apache.jmeter.protocol.aws.sns.SNSProducerStandardTopic</stringProp>
+        </JavaSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SNS FIFO Topic Thread Group" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="TestPlan.comments">Thread group to execute load testing over aws sns fifo topic.</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Deduplication Id" enabled="true">
+          <stringProp name="maximumValue">9999999999</stringProp>
+          <stringProp name="minimumValue">1000000000</stringProp>
+          <stringProp name="outputFormat">0000000000</stringProp>
+          <boolProp name="perThread">false</boolProp>
+          <stringProp name="randomSeed">${__time()}</stringProp>
+          <stringProp name="variableName">msg_deduplication_id</stringProp>
+        </RandomVariableConfig>
+        <hashTree/>
+        <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="SNS FIFO Topic Producer" enabled="true">
+          <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="aws_access_key_id" elementType="Argument">
+                <stringProp name="Argument.name">aws_access_key_id</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_secret_access_key" elementType="Argument">
+                <stringProp name="Argument.name">aws_secret_access_key</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_session_token" elementType="Argument">
+                <stringProp name="Argument.name">aws_session_token</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_region" elementType="Argument">
+                <stringProp name="Argument.name">aws_region</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="aws_configure_profile" elementType="Argument">
+                <stringProp name="Argument.name">aws_configure_profile</stringProp>
+                <stringProp name="Argument.value">default</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sns_topic_arn" elementType="Argument">
+                <stringProp name="Argument.name">sns_topic_arn</stringProp>
+                <stringProp name="Argument.value">arn:aws:sns:us-east-2:688514412000:customer-topic.fifo</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sns_msg_body" elementType="Argument">
+                <stringProp name="Argument.name">sns_msg_body</stringProp>
+                <stringProp name="Argument.value">{        &quot;tool&quot;: &quot;JMeter&quot;,     &quot;plugin&quot;: &quot;awsmeter&quot;,     &quot;service&quot;: &quot;SNS FIFO Topic&quot;,     &quot;message&quot;: &quot;Hello awsmeter JMeter plugin&quot;,     &quot;time&quot;: &quot;${__time()}&quot; }</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sns_msg_attributes" elementType="Argument">
+                <stringProp name="Argument.name">sns_msg_attributes</stringProp>
+                <stringProp name="Argument.value">[     {         &quot;name&quot;: &quot;attribute-1&quot;,         &quot;type&quot;: &quot;String&quot;,         &quot;value&quot;: &quot;wholesale&quot;     },     {         &quot;name&quot;: &quot;attribute-2&quot;,         &quot;type&quot;: &quot;String&quot;,         &quot;value&quot;: &quot;retail&quot;     },     {         &quot;name&quot;: &quot;attribute-3&quot;,         &quot;type&quot;: &quot;String.Array&quot;,         &quot;value&quot;: &quot;wholesale,retail&quot;     },     {         &quot;name&quot;: &quot;attribute-4&quot;,         &quot;type&quot;: &quot;Number&quot;,         &quot;value&quot;: &quot;123&quot;     },     {         &quot;name&quot;: &quot;attribute-5&quot;,         &quot;type&quot;: &quot;Number&quot;,         &quot;value&quot;: &quot;456&quot;     },     {         &quot;name&quot;: &quot;attribute-6&quot;,         &quot;type&quot;: &quot;String.Array&quot;,         &quot;value&quot;: &quot;123,456&quot;     },     {         &quot;name&quot;: &quot;attribute-7&quot;,         &quot;type&quot;: &quot;Binary&quot;,         &quot;value&quot;: &quot;01101101 01100101 01110100 01100101 01110010&quot;     },     {         &quot;name&quot;: &quot;attribute-8&quot;,         &quot;type&quot;: &quot;Binary&quot;,         &quot;value&quot;: &quot;01101101 01100101 01110100 01100101 01110010&quot;     } ]</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sns_msg_group_id" elementType="Argument">
+                <stringProp name="Argument.name">sns_msg_group_id</stringProp>
+                <stringProp name="Argument.value">main</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sns_msg_deduplication_id" elementType="Argument">
+                <stringProp name="Argument.name">sns_msg_deduplication_id</stringProp>
+                <stringProp name="Argument.value">${msg_deduplication_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="classname">org.apache.jmeter.protocol.aws.sns.SNSProducerFifoTopic</stringProp>
+        </JavaSampler>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree/>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
